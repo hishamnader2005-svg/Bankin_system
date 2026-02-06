@@ -8,9 +8,8 @@ public class banking {
     Scanner sc = new Scanner(System.in);
 
 
-    public banking(int balance, String name){
-    getBalance();
-    getName();
+    public banking(){
+
     int choice;
 
     while(true){
@@ -21,6 +20,9 @@ public class banking {
         switch (choice){
             case 1:
                 showbalance();
+                break;
+            case 2:
+                balance=deposit();
         }
     }
 
@@ -53,7 +55,17 @@ public class banking {
         System.out.println("3.Withdraw");
         System.out.println("4.Exit");
     }
-    public String showbalance(){
-        return "Your balance is : "+ getBalance();
+    public void showbalance(){
+
+        System.out.println("Your balance is : "+ getBalance());
+    }
+    public int deposit(){
+        int balance = getBalance();
+        int deposit;
+        deposit=sc.nextInt();
+        sc.nextLine();
+        balance=deposit+balance;
+        System.out.println("Your balance now is " + +balance);
+        return balance;
     }
 }
