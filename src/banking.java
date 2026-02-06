@@ -84,6 +84,8 @@ public class banking {
         int withdraw;
         int balance= getBalance();
 
+        System.out.println("How much you want to withdraw : ");
+
         withdraw=sc.nextInt();
         sc.nextLine();
         if (withdraw>balance){
@@ -93,6 +95,7 @@ public class banking {
         else {
             balance = balance - withdraw;
         }
+        System.out.println("Your balance is now : "+ balance);
         return balance;
 
     }
