@@ -10,6 +10,8 @@ public class banking {
 
     public banking(){
     balance=1000;
+        System.out.println("Enter your name :");
+    name= sc.nextLine();
     int choice;
 
     while(true){
@@ -57,7 +59,7 @@ public class banking {
     //end of setters and getters
 
     public void displaymenu(){
-        System.out.println("Welcome to the banking system");
+        System.out.println("Welcome to the banking system " + name);
         System.out.println("Options: ");
         System.out.println("1.Show balance");
         System.out.println("2.Deposit");
@@ -66,36 +68,35 @@ public class banking {
     }
     public void showbalance(){
 
-        System.out.println("Your balance is : "+ getBalance());
+        System.out.println(name +" balance is : "+ getBalance());
     }
     public int deposit(){
-        int balance = getBalance();
+
         int deposit;
 
         System.out.println("How much do you want to deposit");
         deposit=sc.nextInt();
         sc.nextLine();
         balance=deposit+balance;
-        System.out.println("Your balance now is " + +balance);
+        System.out.println(name+ " balance now is " + balance);
         return balance;
     }
 
     public int withdraw(){
         int withdraw;
-        int balance= getBalance();
 
         System.out.println("How much you want to withdraw : ");
 
         withdraw=sc.nextInt();
         sc.nextLine();
         if (withdraw>balance){
-            System.out.println("you dont have enough money");
+            System.out.println(name + " dont have enough money");
 
         }
         else {
             balance = balance - withdraw;
         }
-        System.out.println("Your balance is now : "+ balance);
+        System.out.println(name +" balance is now : "+ balance);
         return balance;
 
     }
