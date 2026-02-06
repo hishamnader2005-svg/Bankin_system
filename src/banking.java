@@ -5,7 +5,7 @@ public class banking {
     //variables
     private int balance;
     private String name;
-    Scanner sc = new Scanner();
+    Scanner sc = new Scanner(System.in);
 
 
     public banking(int balance, String name){
@@ -52,5 +52,8 @@ public class banking {
         System.out.println("2.Deposit");
         System.out.println("3.Withdraw");
         System.out.println("4.Exit");
+    }
+    public String showbalance(){
+        return "Your balance is : "+ getBalance();
     }
 }
