@@ -9,7 +9,7 @@ public class banking {
 
 
     public banking(){
-
+    balance=1000;
     int choice;
 
     while(true){
@@ -23,6 +23,15 @@ public class banking {
                 break;
             case 2:
                 balance=deposit();
+                break;
+            case 3:
+                balance = withdraw();
+                break;
+            case 4:
+                System.out.println("Exiting goodbye");
+                return;
+            default:
+                System.out.println("Invalid number try again");
         }
     }
 
@@ -62,10 +71,29 @@ public class banking {
     public int deposit(){
         int balance = getBalance();
         int deposit;
+
+        System.out.println("How much do you want to deposit");
         deposit=sc.nextInt();
         sc.nextLine();
         balance=deposit+balance;
         System.out.println("Your balance now is " + +balance);
         return balance;
+    }
+
+    public int withdraw(){
+        int withdraw;
+        int balance= getBalance();
+
+        withdraw=sc.nextInt();
+        sc.nextLine();
+        if (withdraw>balance){
+            System.out.println("you dont have enough money");
+
+        }
+        else {
+            balance = balance - withdraw;
+        }
+        return balance;
+
     }
 }
